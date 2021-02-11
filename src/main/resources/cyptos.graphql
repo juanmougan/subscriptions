@@ -1,0 +1,22 @@
+#
+# Schemas must have at least a query root type
+#
+schema {
+    query: Query
+    subscription : Subscription
+}
+
+type Query {
+    # GraphQL requires a Query
+    hello : String
+}
+
+type Subscription {
+    cryptoPrice(crypto:String) : CryptoPriceUpdate!
+}
+
+type CryptoPriceUpdate {
+    timestamp : String
+    type : String
+    price : Float
+}
