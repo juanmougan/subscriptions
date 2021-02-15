@@ -8,11 +8,16 @@ schema {
 
 type Query {
     # GraphQL requires a Query
-    hello : String
+    price(crypto:String) : PriceUpdate!
 }
 
 type Subscription {
     cryptoPrice(crypto:String) : CryptoPriceUpdate!
+}
+
+type PriceUpdate {
+    type : String
+    price : Float
 }
 
 type CryptoPriceUpdate {
